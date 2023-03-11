@@ -21,7 +21,7 @@ jobs:
 
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
-        working-directory: ./client
+        # working-directory: ./client
 
       - name: Build project
         run: npm run build
@@ -29,7 +29,7 @@ jobs:
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v2
-        working-directory: ./client
+        # working-directory: ./client
         with:
           name: production-files
           path: ./dist
