@@ -9,9 +9,6 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./client
 
     steps:
       - name: Checkout repo
@@ -23,12 +20,15 @@ jobs:
           node-version: 16
 
       - name: Install dependencies
+        working-directory: ./client
         uses: bahmutov/npm-install@v1
 
       - name: Build project
+        working-directory: ./client
         run: npm run build
 
       - name: Upload production-ready build files
+        working-directory: ./client
         uses: actions/upload-artifact@v2
         with:
           name: production-files
