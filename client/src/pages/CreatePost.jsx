@@ -32,7 +32,7 @@ const CreatePost = () => {
         );
 
         const data = await response.json();
-        navigate("/");
+        navigate("/imggen/");
       } catch (err) {
         alert(err);
       } finally {
